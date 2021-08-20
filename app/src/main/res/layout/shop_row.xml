@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="Product"
+            type="com.android.gajju45.e_commerce.Activities.models.Product" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:id="@+id/product_imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/iphone11" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/product_name_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:text="@{Product.name}" />
+
+        <TextView
+            android:id="@+id/price_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:text="@{String.valueOf(Product.price)+ `$`}" />
+
+        <TextView
+            android:id="@+id/available_textView"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/design_default_color_primary"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:layout_height="wrap_content"
+            android:text="@{Product.available ? `Available` : `Out of stock`}" />
+
+        <Button
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:layout_gravity="center"
+            android:id="@+id/addto_cardButton"
+            android:layout_width="wrap_content"
+            android:enabled="@{Product.available}"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_height="wrap_content"
+            android:text="Add to card" />
+
+
+    </LinearLayout>
+</layout>
