@@ -18,6 +18,7 @@ public class Product {
         this.price = price;
         this.isAvailable = isAvailable;
         this.imgUrl = imgUrl;
+
     }
 
     public String getId() {
