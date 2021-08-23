@@ -5,7 +5,7 @@
     <data>
         <variable
             name="Product"
-            type="com.android.gajju45.e_commerce.Activities.models.Product" />
+            type="com.android.gajju45.e_commerce.activities.models.Product" />
 
     </data>
 

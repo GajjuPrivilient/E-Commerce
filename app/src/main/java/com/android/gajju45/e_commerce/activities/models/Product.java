@@ -1,9 +1,7 @@
-package com.android.gajju45.e_commerce.Activities.models;
+package com.android.gajju45.e_commerce.activities.models;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
-
-import java.util.Objects;
 
 public class Product {
     private String id;

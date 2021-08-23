@@ -1,10 +1,10 @@
-package com.android.gajju45.e_commerce.Activities.viewModels;
+package com.android.gajju45.e_commerce.activities.viewModels;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.android.gajju45.e_commerce.Activities.models.Product;
-import com.android.gajju45.e_commerce.Activities.repo.ShopRepo;
+import com.android.gajju45.e_commerce.activities.models.Product;
+import com.android.gajju45.e_commerce.activities.repo.ShopRepo;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.gajju45.e_commerce">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -10,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECommerce">
         <activity
-            android:name=".Activities.activity.HomeActivity"
+            android:name=".activities.activity.HomeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,13 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.activity.VerificationActivity"
+            android:name=".activities.activity.VerificationActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.activity.OTPActivity"
+            android:name=".activities.activity.OTPActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.activity.SplashActivity"
+            android:name=".activities.activity.SplashActivity"
             android:exported="true">
 
         </activity>

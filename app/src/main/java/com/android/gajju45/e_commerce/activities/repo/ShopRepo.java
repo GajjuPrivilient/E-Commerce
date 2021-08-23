@@ -1,9 +1,9 @@
-package com.android.gajju45.e_commerce.Activities.repo;
+package com.android.gajju45.e_commerce.activities.repo;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.android.gajju45.e_commerce.Activities.models.Product;
+import com.android.gajju45.e_commerce.activities.models.Product;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.android.gajju45.e_commerce.Activities.view;
+package com.android.gajju45.e_commerce.activities.view;
 
 import android.os.Bundle;
 

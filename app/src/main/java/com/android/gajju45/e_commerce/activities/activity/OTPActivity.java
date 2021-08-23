@@ -1,4 +1,4 @@
-package com.android.gajju45.e_commerce.Activities.activity;
+package com.android.gajju45.e_commerce.activities.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

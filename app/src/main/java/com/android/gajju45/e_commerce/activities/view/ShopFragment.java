@@ -1,4 +1,4 @@
-package com.android.gajju45.e_commerce.Activities.view;
+package com.android.gajju45.e_commerce.activities.view;
 
 import android.os.Bundle;
 
@@ -12,10 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.gajju45.e_commerce.Activities.adapters.ShopListAdapter;
-import com.android.gajju45.e_commerce.Activities.models.Product;
-import com.android.gajju45.e_commerce.Activities.viewModels.ShopViewModel;
-import com.android.gajju45.e_commerce.R;
+import com.android.gajju45.e_commerce.activities.adapters.ShopListAdapter;
+import com.android.gajju45.e_commerce.activities.models.Product;
+import com.android.gajju45.e_commerce.activities.viewModels.ShopViewModel;
 import com.android.gajju45.e_commerce.databinding.FragmentShopBinding;
 
 import java.util.List;

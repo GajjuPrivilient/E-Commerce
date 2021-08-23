@@ -1,18 +1,14 @@
-package com.android.gajju45.e_commerce.Activities.adapters;
+package com.android.gajju45.e_commerce.activities.adapters;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.gajju45.e_commerce.Activities.models.Product;
+import com.android.gajju45.e_commerce.activities.models.Product;
 import com.android.gajju45.e_commerce.databinding.ShopRowBinding;
-
-import java.util.List;
 
 public class ShopListAdapter extends ListAdapter<Product, ShopListAdapter.shopVH> {
 
