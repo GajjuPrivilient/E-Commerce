@@ -1,7 +1,12 @@
 package com.android.gajju45.e_commerce.activities.models;
 
+import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
+import androidx.databinding.BindingAdapter;
 import androidx.recyclerview.widget.DiffUtil;
+
+import com.bumptech.glide.Glide;
 
 public class Product {
     private String id;
@@ -91,4 +96,11 @@ public class Product {
             return oldItem.equals(newItem);
         }
     };
+    @BindingAdapter("android:ProductImage")
+    public static void loadImage(ImageView imageView, String SimageUrl) {
+        Glide.with(imageView)
+                .load(SimageUrl)
+                .fitCenter()
+                .into(imageView);
+    }
 }

@@ -12,8 +12,10 @@ import com.android.gajju45.e_commerce.databinding.ShopRowBinding;
 
 public class ShopListAdapter extends ListAdapter<Product, ShopListAdapter.shopVH> {
 
-    public ShopListAdapter() {
+    ShopInterface shopInterface;
+    public ShopListAdapter(ShopInterface shopInterface) {
         super(Product.itemCallback);
+        this.shopInterface=shopInterface;
     }
 
     @NonNull
@@ -21,6 +23,7 @@ public class ShopListAdapter extends ListAdapter<Product, ShopListAdapter.shopVH
     public shopVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         ShopRowBinding shopRowBinding = ShopRowBinding.inflate(layoutInflater, parent, false);
+        shopRowBinding.setShopInterface(shopInterface);//for click to details fragments
         return new shopVH(shopRowBinding);
     }
 

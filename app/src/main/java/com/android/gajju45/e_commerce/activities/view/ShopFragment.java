@@ -1,5 +1,6 @@
 package com.android.gajju45.e_commerce.activities.view;
 
+import android.nfc.Tag;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -7,11 +8,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavHost;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.DividerItemDecoration;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.gajju45.e_commerce.R;
 import com.android.gajju45.e_commerce.activities.adapters.ShopListAdapter;
 import com.android.gajju45.e_commerce.activities.models.Product;
 import com.android.gajju45.e_commerce.activities.viewModels.ShopViewModel;
@@ -22,9 +29,13 @@ import java.util.List;
 
 public class ShopFragment extends Fragment implements  ShopListAdapter.ShopInterface {
 
+    private static final String TAG = "ShopFragment";
     FragmentShopBinding fragmentShopBinding;
     private ShopListAdapter shopListAdapter;
     private ShopViewModel shopViewModel;
+
+    private NavController navController;
+
 
 
 
@@ -48,16 +59,21 @@ public class ShopFragment extends Fragment implements  ShopListAdapter.ShopInter
         super.onViewCreated(view, savedInstanceState);
 
 
-        shopListAdapter=new ShopListAdapter();
+        shopListAdapter=new ShopListAdapter(this);
         fragmentShopBinding.shopRV.setAdapter(shopListAdapter);
 
-        shopViewModel =new ViewModelProvider(requireActivity()).get(shopViewModel.getClass());
+        //Divided into HZ & V
+        fragmentShopBinding.shopRV.addItemDecoration(new DividerItemDecoration(requireContext(),DividerItemDecoration.HORIZONTAL));
+        fragmentShopBinding.shopRV.addItemDecoration(new DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL));
+
+        shopViewModel =new ViewModelProvider(requireActivity()).get((ShopViewModel.class));
         shopViewModel.getProducts().observe(getViewLifecycleOwner(), new Observer<List<Product>>() {
             @Override
             public void onChanged(List<Product> products) {
                 shopListAdapter.submitList(products);
             }
         });
+        navController= Navigation.findNavController(view);
     }
 
     //interface
@@ -68,6 +84,10 @@ public class ShopFragment extends Fragment implements  ShopListAdapter.ShopInter
 
     @Override
     public void onItemClick(Product product) {
+        Log.d(TAG,"onItemClick"+product.toString());
+        shopViewModel.setProduct(product);
+        navController.navigate(R.id.action_shopFragment_to_productDetailFragment);
+
 
     }
 }

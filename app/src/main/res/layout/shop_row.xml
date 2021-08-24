@@ -3,60 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <import type="android.view.View" />
+
         <variable
             name="Product"
             type="com.android.gajju45.e_commerce.activities.models.Product" />
 
+        <variable
+            name="shopInterface"
+            type="com.android.gajju45.e_commerce.activities.adapters.ShopListAdapter.ShopInterface" />
+
     </data>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:background="?attr/selectableItemBackground"
+        android:layout_height="wrap_content"
+        android:onClick="@{()-> shopInterface.onItemClick(Product)}"
+        android:orientation="vertical">
 
 
         <ImageView
-            android:scaleType="fitCenter"
-            android:layout_gravity="center"
             android:id="@+id/product_imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/iphone11" />
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/banana" />
 
         <TextView
-            android:layout_gravity="center"
             android:id="@+id/product_name_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:text="@{Product.name}" />
+            android:layout_gravity="center"
+            android:text="@{Product.name}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <TextView
             android:id="@+id/price_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:text="@{String.valueOf(Product.price)+ `$`}" />
+            android:text="@{String.valueOf(Product.price)+ `$`}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
         <TextView
             android:id="@+id/available_textView"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/design_default_color_primary"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:layout_height="wrap_content"
-            android:text="@{Product.available ? `Available` : `Out of stock`}" />
+            android:layout_gravity="center"
+            android:text="@{Product.available ? `Available` : `Out of stock`}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/design_default_color_primary" />
 
         <Button
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:layout_gravity="center"
             android:id="@+id/addto_cardButton"
-            android:layout_width="wrap_content"
-            android:enabled="@{Product.available}"
             style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add to card" />
+            android:layout_gravity="center"
+            android:enabled="@{Product.available}"
+            android:text="Add to card"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
 
     </LinearLayout>
