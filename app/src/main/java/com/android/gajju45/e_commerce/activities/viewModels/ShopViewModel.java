@@ -4,13 +4,16 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.android.gajju45.e_commerce.activities.models.CartItem;
 import com.android.gajju45.e_commerce.activities.models.Product;
+import com.android.gajju45.e_commerce.activities.repo.CardRepo;
 import com.android.gajju45.e_commerce.activities.repo.ShopRepo;
 
 import java.util.List;
 
 public class ShopViewModel  extends ViewModel {
     ShopRepo shopRepo=new ShopRepo();
+    CardRepo cardRepo=new CardRepo();
 
 
     MutableLiveData<Product> mutableLiveData=new MutableLiveData<>();
@@ -25,5 +28,15 @@ public class ShopViewModel  extends ViewModel {
 
     public LiveData<Product>getProduct(){
         return mutableLiveData;
+    }
+
+    public LiveData<List<CartItem>> getCart(){
+        return cardRepo.getCart();
+
+    }
+
+    public boolean addItemToCart(Product product)
+    {
+        return cardRepo.addItemToCart(product);
     }
 }

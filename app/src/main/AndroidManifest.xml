@@ -27,7 +27,9 @@
             android:exported="true" />
         <activity
             android:name=".activities.activity.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Widget.MaterialComponents.MaterialCalendar.Fullscreen"
+            >
 
         </activity>
     </application>

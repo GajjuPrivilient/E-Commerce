@@ -27,7 +27,7 @@ import com.android.gajju45.e_commerce.databinding.FragmentShopBinding;
 import java.util.List;
 
 
-public class ShopFragment extends Fragment implements  ShopListAdapter.ShopInterface {
+public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterface {
 
     private static final String TAG = "ShopFragment";
     FragmentShopBinding fragmentShopBinding;
@@ -37,20 +37,16 @@ public class ShopFragment extends Fragment implements  ShopListAdapter.ShopInter
     private NavController navController;
 
 
-
-
-
     public ShopFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        fragmentShopBinding=FragmentShopBinding.inflate(inflater,container,false);
+        fragmentShopBinding = FragmentShopBinding.inflate(inflater, container, false);
         return fragmentShopBinding.getRoot();
     }
 
@@ -59,32 +55,35 @@ public class ShopFragment extends Fragment implements  ShopListAdapter.ShopInter
         super.onViewCreated(view, savedInstanceState);
 
 
-        shopListAdapter=new ShopListAdapter(this);
+        shopListAdapter = new ShopListAdapter(this);
         fragmentShopBinding.shopRV.setAdapter(shopListAdapter);
 
         //Divided into HZ & V
-        fragmentShopBinding.shopRV.addItemDecoration(new DividerItemDecoration(requireContext(),DividerItemDecoration.HORIZONTAL));
-        fragmentShopBinding.shopRV.addItemDecoration(new DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL));
+        fragmentShopBinding.shopRV.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.HORIZONTAL));
+        fragmentShopBinding.shopRV.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
-        shopViewModel =new ViewModelProvider(requireActivity()).get((ShopViewModel.class));
+        shopViewModel = new ViewModelProvider(requireActivity()).get((ShopViewModel.class));
         shopViewModel.getProducts().observe(getViewLifecycleOwner(), new Observer<List<Product>>() {
             @Override
             public void onChanged(List<Product> products) {
                 shopListAdapter.submitList(products);
             }
         });
-        navController= Navigation.findNavController(view);
+        navController = Navigation.findNavController(view);
     }
 
     //interface
     @Override
     public void addItem(Product product) {
+       // Log.d(TAG, "add Item" + product.toString());
+        boolean isAddedd = shopViewModel.addItemToCart(product);
+        Log.d(TAG, "addItem: " + product.getName() + isAddedd);
 
     }
 
     @Override
     public void onItemClick(Product product) {
-        Log.d(TAG,"onItemClick"+product.toString());
+       // Log.d(TAG, "onItemClick" + product.toString());
         shopViewModel.setProduct(product);
         navController.navigate(R.id.action_shopFragment_to_productDetailFragment);
 

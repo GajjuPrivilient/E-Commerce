@@ -93,6 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:enabled="@{shopViewModel.product.available}"
+                android:onClick="@{() -> shopViewModel.addItemToCart(shopViewModel.product)}"
                 android:text="Add to cart"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
 
