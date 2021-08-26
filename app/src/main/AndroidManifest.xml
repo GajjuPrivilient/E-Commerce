@@ -18,13 +18,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
+
             android:name=".activities.activity.VerificationActivity"
             android:exported="true" />
         <activity
             android:name=".activities.activity.OTPActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".activities.activity.SplashActivity"
             android:exported="true"

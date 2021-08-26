@@ -39,4 +39,17 @@ public class ShopViewModel  extends ViewModel {
     {
         return cardRepo.addItemToCart(product);
     }
+
+    public void removeItemFromCart(CartItem cartItem)
+    {
+        cardRepo.removeItemFromCart( cartItem);
+    }
+    public void changeQuantity(CartItem cartItem, int quantity){
+        cardRepo.changeQuantity(cartItem,quantity);
+    }
+
+    public LiveData<Double> getTotalPrice(){
+       return cardRepo.getTotalPrice();
+    }
+
 }

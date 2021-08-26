@@ -23,6 +23,7 @@ import com.android.gajju45.e_commerce.activities.adapters.ShopListAdapter;
 import com.android.gajju45.e_commerce.activities.models.Product;
 import com.android.gajju45.e_commerce.activities.viewModels.ShopViewModel;
 import com.android.gajju45.e_commerce.databinding.FragmentShopBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -78,6 +79,13 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
        // Log.d(TAG, "add Item" + product.toString());
         boolean isAddedd = shopViewModel.addItemToCart(product);
         Log.d(TAG, "addItem: " + product.getName() + isAddedd);
+        if (isAddedd){
+            Snackbar.make(requireView(),product.getName()+" Added to cart.",Snackbar.LENGTH_LONG).show();
+        }
+        else {
+            Snackbar.make(requireView(),product.getName()+" Already have the max quantity in the cart.",Snackbar.LENGTH_LONG).show();
+
+        }
 
     }
 

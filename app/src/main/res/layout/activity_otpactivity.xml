@@ -3,12 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_margin="12dp"
     android:layout_height="match_parent"
     tools:context=".activities.activity.OTPActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
         android:orientation="vertical">
 
 
@@ -51,11 +54,13 @@
                 app:ccp_contentColor="@color/black" />
 
             <EditText
+
                 android:id="@+id/editText_carrierNum"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
                 android:layout_gravity="center_vertical"
                 android:background="#00000000"
+                android:digits="1234567890"
                 android:gravity="center_vertical"
                 android:hint="999 999 9999"
                 android:inputType="phone"
@@ -65,7 +70,7 @@
 
         </LinearLayout>
 
-      <View
+        <View
             android:layout_width="wrap_content"
             android:layout_height="2dp"
             android:layout_marginStart="40dp"
@@ -74,12 +79,13 @@
 
 
         <Button
-            android:backgroundTint="#6C5CFF"
-            android:id="@+id/next"
+            android:onClick="otp_req"
+            android:id="@+id/request_otpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"
+            android:backgroundTint="#6C5CFF"
             android:paddingStart="60dp"
             android:paddingEnd="60dp"
             android:text="Request OTP"

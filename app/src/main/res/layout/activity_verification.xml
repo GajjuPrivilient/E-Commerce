@@ -44,7 +44,7 @@
                     android:layout_marginTop="12dp"
                     android:gravity="center_horizontal"
                     android:letterSpacing="0.2"
-                    android:text="Enter the OTP send to the\n Mobile Number "
+                    android:text="We've sent SMS with an activation code to "
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
@@ -100,14 +100,16 @@
                 <EditText
                     android:id="@+id/otp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="38dp"
                     android:layout_gravity="center_vertical"
                     android:background="@null"
                     android:hint="123456"
+
+                    android:digits="1234567890"
                     android:textColorHint="#6A6767"
                     android:gravity="center"
                     android:inputType="number"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
 
                     />
@@ -123,6 +125,7 @@
                 android:background="@color/white" />
 
             <Button
+                android:onClick="Verified"
                 android:backgroundTint="#6C5CFE"
                 android:id="@+id/submit"
                 android:layout_width="match_parent"

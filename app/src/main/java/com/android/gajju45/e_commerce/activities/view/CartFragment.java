@@ -22,7 +22,7 @@ import com.android.gajju45.e_commerce.databinding.FragmentCartBinding;
 
 import java.util.List;
 
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment implements CardListAdapter.CartInterface {
     private static final String TAG = "CartFragment";
     ShopViewModel shopViewModel;
     FragmentCartBinding fragmentCartBinding;
@@ -49,7 +49,7 @@ public class CartFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        CardListAdapter cardListAdapter=new CardListAdapter();
+        CardListAdapter cardListAdapter=new CardListAdapter(this);
         fragmentCartBinding.cartRecyclerView.setAdapter(cardListAdapter);
         fragmentCartBinding.cartRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL));
         shopViewModel=new ViewModelProvider(requireActivity()).get(ShopViewModel.class);
@@ -60,5 +60,27 @@ public class CartFragment extends Fragment {
                 cardListAdapter.submitList(cartItems);
             }
         });
+
+        //Total Price
+        shopViewModel.getTotalPrice().observe(getViewLifecycleOwner(), new Observer<Double>() {
+            @Override
+            public void onChanged(Double aDouble) {
+
+                fragmentCartBinding.orderTotalTextView.setText("Total: ₹ "+ aDouble.toString());
+
+            }
+        });
+    }
+
+    @Override
+    public void delete(CartItem cartItem) {
+        shopViewModel.removeItemFromCart(cartItem);
+
+    }
+
+    @Override
+    public void changeQuantity(CartItem cartItem, int quantity) {
+
+        shopViewModel.changeQuantity(cartItem, quantity);
     }
 }
