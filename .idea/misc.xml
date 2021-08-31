@@ -3,20 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/drawable/badge_shape.xml" value="0.12129629629629629" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.11574074074074074" />
-        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.1675925925925926" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/drawable/rect_box.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/drawable/user.xml" value="0.1" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_main.xml" value="0.1638888888888889" />
-        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_otpactivity.xml" value="0.33" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_otpactivity.xml" value="0.18" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_splash.xml" value="0.33" />
-        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_verification.xml" value="0.33" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/activity_verification.xml" value="0.22" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/cart_action_item.xml" value="0.75" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/cart_row.xml" value="0.1" />
-        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/fragment_cart.xml" value="0.23314606741573032" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/fragment_order.xml" value="0.35989583333333336" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/fragment_product_detail.xml" value="0.1" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/fragment_profile.xml" value="0.16574074074074074" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/fragment_shop.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/nav_graph.xml" value="0.17685185185185184" />
         <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/layout/shop_row.xml" value="0.25" />
-        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/menu/main_menu.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18981481481481483" />
+        <entry key="..\:/Users/Gajendra/AndroidStudioProjects/ECommerce/app/src/main/res/menu/main_menu.xml" value="0.12" />
       </map>
     </option>
   </component>

@@ -30,7 +30,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/banana" />
+            app:srcCompat="@drawable/apple" />
 
         <TextView
             android:id="@+id/product_name_textView"

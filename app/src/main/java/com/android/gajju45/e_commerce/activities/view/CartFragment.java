@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.gajju45.e_commerce.R;
 import com.android.gajju45.e_commerce.activities.adapters.CardListAdapter;
@@ -58,6 +59,7 @@ public class CartFragment extends Fragment implements CardListAdapter.CartInterf
             public void onChanged(List<CartItem> cartItems) {
 
                 cardListAdapter.submitList(cartItems);
+                fragmentCartBinding.placeOrderButton.setEnabled(cartItems.size()>0);
             }
         });
 
@@ -69,6 +71,11 @@ public class CartFragment extends Fragment implements CardListAdapter.CartInterf
                 fragmentCartBinding.orderTotalTextView.setText("Total: ₹ "+ aDouble.toString());
 
             }
+        });
+        fragmentCartBinding.placeOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"Payment",Toast.LENGTH_SHORT).show();              }
         });
     }
 
@@ -83,4 +90,6 @@ public class CartFragment extends Fragment implements CardListAdapter.CartInterf
 
         shopViewModel.changeQuantity(cartItem, quantity);
     }
+
+
 }

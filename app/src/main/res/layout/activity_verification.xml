@@ -99,10 +99,11 @@
 
                 <EditText
                     android:id="@+id/otp"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="38dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@null"
+android:ems="6"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rect_box"
                     android:hint="123456"
 
                     android:digits="1234567890"

@@ -17,20 +17,21 @@
         <ImageView
             android:src="@drawable/ic_baseline_android_24"
             android:id="@+id/splash_img"
-            android:layout_width="48dp"
-            android:layout_height="48dp"/>
+            android:layout_width="24dp"
+            android:layout_height="24dp"/>
         <TextView
+            android:layout_marginTop="8dp"
             android:id="@+id/splash_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Splash Screen"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
         <ProgressBar
             android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginTop="12dp"/>
 
 
